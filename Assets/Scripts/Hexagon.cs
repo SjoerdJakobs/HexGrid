@@ -11,6 +11,7 @@ public class Hexagon : MonoBehaviour
     private Vector3[] vertices;
     private Vector3 transf;
 
+
     public const float radius = 10f;
 
     public const float innerRadius = radius * 0.866025404f;
@@ -67,6 +68,7 @@ public class Hexagon : MonoBehaviour
             Gizmos.DrawSphere(Corners.corners[i], 0.1f);
         }
     }
+
     public static class Corners
     {
         public static Vector3[] corners = {
