@@ -11,7 +11,7 @@ public class Hexagon : MonoBehaviour
     private Vector3[] vertices;
     private Vector3 transf;
     
-    public static float radius = 10f;
+    public static float radius = 1f;
 
     public static float innerRadius = radius * 0.866025404f;
 
@@ -38,7 +38,7 @@ public class Hexagon : MonoBehaviour
         mesh.vertices = positionCorners;
 
 
-        int[] triangles = new int[30];
+        int[] triangles = new int[48];
         //right top middle triangele
         triangles[0] = 1;
         triangles[1] = 2;
@@ -57,7 +57,7 @@ public class Hexagon : MonoBehaviour
         //left top triangle
         triangles[9] = 2;
         triangles[10] = 3;
-        triangles[11] = 4;
+        triangles[11] = 4;  
 
 
         //wals
@@ -85,7 +85,32 @@ public class Hexagon : MonoBehaviour
         triangles[28] = 8;
         triangles[29] = 1;
 
+        triangles[30] = 8;
+        triangles[31] = 9;
+        triangles[32] = 2;
+
+        triangles[33] = 9;
+        triangles[34] = 3;
+        triangles[35] = 2;
+
+        triangles[36] = 3;
+        triangles[37] = 9;
+        triangles[38] = 10;
+
+        triangles[39] = 4;
+        triangles[40] = 3;
+        triangles[41] = 10;
+
+        triangles[42] = 5;
+        triangles[43] = 4;
+        triangles[44] = 10;
+
+        triangles[45] = 11;
+        triangles[46] = 5;
+        triangles[47] = 10;
+
         mesh.triangles = triangles;
+        mesh.RecalculateNormals();
     }
 
     public struct Corners
@@ -126,7 +151,7 @@ public class Hexagon : MonoBehaviour
         };
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
 
         Gizmos.color = Color.black;
@@ -134,5 +159,5 @@ public class Hexagon : MonoBehaviour
         {
             Gizmos.DrawSphere(Corners.multipleCorners[i], 0.1f);
         }
-    }
+    }*/
 }
