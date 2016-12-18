@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public class Grid : MonoBehaviour
 {
+    /// <summary>
+    /// was not sure if i would need some of the value's so i kept them public. but when im sure i just change them to private.
+    /// </summary>
+
     public GameObject cameraObj;
 
     public int width = 6;
@@ -32,9 +36,7 @@ public class Grid : MonoBehaviour
 
     public List<Vector3> points;
 
-    /// <summary>
-    /// all the ui stuff should have a class od its own
-    /// </summary>
+    
     void Awake()
     {
         width = (int)sizeSlider.value;
@@ -45,7 +47,9 @@ public class Grid : MonoBehaviour
         hexagonArray = new GameObject[200,200];
         CreateGrid();
     }
-
+    /// <summary>
+    /// all the ui stuff should have a class of its own
+    /// </summary>
     void Update()
     {
         width = (int)sizeSlider.value;
